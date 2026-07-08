@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium luxury wedding invitation for Monika S and Madhav J.">
+  <title>Monika S ❤️ Madhav J | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="loader" id="loader" aria-label="Loading invitation">
+    <div class="loader__crest" aria-hidden="true">M</div>
+    <div class="loader__names">
+      <span>Madhav J</span>
+      <small>&amp;</small>
+      <span>Monika S</span>
+    </div>
+  </div>
+
+  <canvas class="particle-canvas" id="particleCanvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#hero" aria-label="Monika and Madhav wedding invitation home">M <span>❤</span> M</a>
+    <nav class="nav" aria-label="Invitation sections">
+      <a href="#couple">Couple</a>
+      <a href="#events">Events</a>
+      <!-- <a href="#gallery">Gallery</a> -->
+      <a href="#venue">Venue</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-label="Wedding invitation hero">
+      <div class="hero__overlay"></div>
+      <div class="floating-hearts" aria-hidden="true">
+        <span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span>
+      </div>
+      <div class="hero__content reveal">
+        <p class="eyebrow">Together with our families</p>
+        <h1><span>Madhav J</span><b>❤</b><span>Monika S</span></h1>
+        <p class="hero__copy">We request the honour of your presence<br>to celebrate our wedding.</p>
+        <button class="primary-button" id="openInvitation" type="button">Open Invitation</button>
+      </div>
+    </section>
+
+    <section class="section couple-section" id="couple">
+      <div class="section__heading reveal">
+        <p class="eyebrow">Bride &amp; Groom</p>
+        <h2>Two Hearts, One Beautiful Promise</h2>
+      </div>
+      <div class="couple-grid">
+        <article class="profile-card reveal zoom">
+          <img src="assets/images/bride.jpg" alt="Portrait of bride Monika S">
+          <div>
+            <p class="role">Bride</p>
+            <h3>Monika S</h3>
+            <p>Daughter of</p>
+            <strong>P. Sasikumar<br>S. Lavanya</strong>
+          </div>
+        </article>
+        <article class="profile-card reveal zoom">
+          <img src="assets/images/groom.jpg" alt="Portrait of groom Madhav J">
+          <div>
+            <p class="role">Groom</p>
+            <h3>Madhav J</h3>
+            <p>Son of</p>
+            <strong>J. Nagaraju<br>J. Vijayalakshmi</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section countdown-section" id="countdown">
+      <div class="section__heading reveal">
+        <p class="eyebrow">The Wedding Begins In</p>
+        <h2>31 August 2026 · 09:15 AM</h2>
+      </div>
+      <div class="countdown reveal" aria-live="polite">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section events-section" id="events">
+      <div class="section__heading reveal">
+        <p class="eyebrow">Wedding Events</p>
+        <h2>A Celebration Written In Gold</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-card reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <p class="event-date">30 August 2026</p>
+          <h3>Reception</h3>
+          <p>6:00 PM onwards</p>
+        </article>
+        <article class="timeline-card reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <p class="event-date">31 August 2026</p>
+          <h3>Uppanayam</h3>
+          <p>6:00 AM - 7:00 AM</p>
+        </article>
+        <article class="timeline-card reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <p class="event-date">31 August 2026</p>
+          <h3>Muhurtham</h3>
+          <p>9:15 AM - 10:15 AM</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story-section" id="story">
+      <div class="section__heading reveal">
+        <p class="eyebrow">Our Story</p>
+        <h2>Our Story</h2>
+      </div>
+      <div class="story-grid">
+        <article class="story-card reveal">
+          <span>01</span>
+          <h3>A Gentle Beginning</h3>
+          <p>What started as a simple introduction grew into warm conversations, shared laughter, and a quiet certainty.</p>
+        </article>
+        <article class="story-card reveal">
+          <span>02</span>
+          <h3>A Promise Chosen</h3>
+          <p>With blessings from our families, we found a love that feels graceful, grounded, and beautifully meant to be.</p>
+        </article>
+        <article class="story-card reveal">
+          <span>03</span>
+          <h3>Forever Awaits</h3>
+          <p>Now we step into a new chapter together, surrounded by the people whose love makes the day complete.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- <section class="section gallery-section" id="gallery">
+      <div class="section__heading reveal">
+        <p class="eyebrow">Photo Gallery</p>
+        <h2>Golden Memories</h2>
+      </div>
+      <div class="masonry-gallery reveal" id="galleryGrid">
+        <button type="button"><img src="assets/images/gallery1.jpg" alt="Wedding gallery image 1"></button>
+        <button type="button"><img src="assets/images/gallery2.jpg" alt="Wedding gallery image 2"></button>
+        <button type="button"><img src="assets/images/gallery3.jpg" alt="Wedding gallery image 3"></button>
+        <button type="button"><img src="assets/images/gallery4.jpg" alt="Wedding gallery image 4"></button>
+        <button type="button"><img src="assets/images/gallery5.jpg" alt="Wedding gallery image 5"></button>
+        <button type="button"><img src="assets/images/gallery6.jpg" alt="Wedding gallery image 6"></button>
+        <button type="button"><img src="assets/images/gallery7.jpg" alt="Wedding gallery image 7"></button>
+        <button type="button"><img src="assets/images/gallery8.jpg" alt="Wedding gallery image 8"></button>
+        <button type="button"><img src="assets/images/gallery9.jpg" alt="Wedding gallery image 9"></button>
+        <button type="button"><img src="assets/images/gallery10.jpg" alt="Wedding gallery image 10"></button>
+      </div>
+    </section> -->
+
+    <section class="section venue-section" id="venue">
+      <div class="venue-card reveal">
+        <p class="eyebrow">Venue</p>
+        <h2>GKC Kalyana Mandapam</h2>
+        <p>Mogili<br>Andhra Pradesh<br>517429</p>
+        <a class="primary-button" href="https://maps.app.goo.gl/65oR8qN8sKtD9AA99?g_st=ac" target="_blank" rel="noopener">Open Google Maps</a>
+      </div>
+    </section>
+
+    <section class="section rsvp-section" id="rsvp">
+      <div class="section__heading reveal">
+        <p class="eyebrow">RSVP</p>
+        <h2>Grace Us With Your Presence</h2>
+      </div>
+      <form class="rsvp-form reveal" id="rsvpForm">
+        <label for="guestName">Name</label>
+        <input id="guestName" name="name" type="text" autocomplete="name" required>
+
+        <label for="guestPhone">Phone</label>
+        <input id="guestPhone" name="phone" type="tel" autocomplete="tel" required>
+
+        <label for="guestCount">Guests</label>
+        <input id="guestCount" name="guests" type="number" min="1" max="20" value="1" required>
+
+        <label for="attendance">Attendance</label>
+        <select id="attendance" name="attendance" required>
+          <option value="Attending">Attending</option>
+          <option value="Not Attending">Not Attending</option>
+          <option value="Will Confirm Soon">Will Confirm Soon</option>
+        </select>
+
+        <button class="primary-button" type="submit">Submit RSVP</button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section__heading reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>With Love, We Await You</h2>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card reveal">
+          <p>Bride</p>
+          <h3>+91 9342966372</h3>
+          <div class="contact-actions">
+            <a href="https://wa.me/919342966372" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="tel:+919342966372">Call</a>
+          </div>
+        </article>
+        <article class="contact-card reveal">
+          <p>Groom</p>
+          <h3>+91 8247249597</h3>
+          <div class="contact-actions">
+            <a href="https://wa.me/918247249597" target="_blank" rel="noopener">WhatsApp</a>
+            <a href="tel:+918247249597">Call</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <button class="music-player" id="musicToggle" type="button" aria-label="Play or pause background music">
+    <span id="musicIcon">▶</span>
+  </button>
+  <audio id="backgroundMusic" src="assets/music/background.mp3" preload="auto" loop></audio>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview">
+    <button class="lightbox__close" id="closeLightbox" type="button" aria-label="Close preview">×</button>
+    <img id="lightboxImage" src="assets/images/gallery1.jpg" alt="Expanded wedding gallery preview">
+  </div>
+
+  <footer class="footer">
+    <h2>Thank You</h2>
+    <p>Your love and blessings mean everything to us.</p>
+    <strong>Madhav ❤ Monika</strong>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
