@@ -13,6 +13,8 @@ const canvas = document.getElementById("particleCanvas");
 const ctx = canvas.getContext("2d");
 
 const weddingDate = new Date("2026-08-31T09:15:00+05:30").getTime();
+const googleFormEndpoint =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf1YuUzzoz36sGDZ29WCbGLSH03ZyyM2deTBfoOttNOVHbWfw/formResponse";
 let particles = [];
 let audioContext = null;
 let musicNodes = [];
@@ -69,9 +71,10 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-rsvpForm.addEventListener("submit", (event) => {
+rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const formData = new FormData(rsvpForm);
+  const submitButton = rsvpForm.querySelector('button[type="submit"]');
   const response = {
     name: formData.get("name").trim(),
     phone: formData.get("phone").trim(),
@@ -80,13 +83,40 @@ rsvpForm.addEventListener("submit", (event) => {
     submittedAt: new Date().toISOString()
   };
 
+  const googleResponse = new URLSearchParams({
+    "entry.846674390": response.name,
+    "entry.1501720018": response.phone,
+    "entry.864346433": response.guests,
+    "entry.1191134281": response.attendance.replace("Confirm Soon", "confirm soon")
+  });
+
+  submitButton.disabled = true;
+  submitButton.textContent = "Submitting...";
+  formStatus.textContent = "";
+
+  try {
+    await fetch(googleFormEndpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: googleResponse.toString()
+    });
+  } catch (error) {
+    formStatus.textContent = "We could not send your RSVP. Please check your connection and try again.";
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit RSVP";
+    return;
+  }
+
   const savedResponses = JSON.parse(localStorage.getItem("monikaMadhavRsvps") || "[]");
   savedResponses.push(response);
   localStorage.setItem("monikaMadhavRsvps", JSON.stringify(savedResponses));
 
-  formStatus.textContent = "Thank you. Your RSVP has been saved.";
+  formStatus.textContent = "Thank you. Your RSVP has been submitted.";
   rsvpForm.reset();
   document.getElementById("guestCount").value = 1;
+  submitButton.disabled = false;
+  submitButton.textContent = "Submit RSVP";
 });
 
 // galleryGrid.addEventListener("click", (event) => {
